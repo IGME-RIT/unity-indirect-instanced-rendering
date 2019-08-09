@@ -12,6 +12,8 @@ As previously mentioned, one of the main issues with instanced rendering in Unit
 
 To overcome this, we can work with a different draw call: Graphics.DrawMeshInstancedIndirect(), but this complicates the process of passing in transforms a little.
 
+
+
 Using buffers gives us another added benefit. Data no longer has to be passed to the graphics card ever render call. It can read from the buffer directly.
 
 This also means that we can modify the buffer directly from compute shaders, and it never has to leave the graphics card. See part 3 for more

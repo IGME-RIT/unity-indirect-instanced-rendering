@@ -47,8 +47,8 @@ public class IndirectInstancedRendering : MonoBehaviour
         for (int i = 0; i < instanceCount; i++)
         {
             pos = Random.insideUnitSphere * 50;
-            rot = Quaternion.Euler(Random.insideUnitSphere * 180);
-            scale = Random.insideUnitSphere;
+            rot = Random.rotation;
+            scale = new Vector3(Random.Range(0, 2.0f), Random.Range(0, 2.0f), Random.Range(0, 2.0f));
             instanceTransforms[i] = Matrix4x4.TRS(pos, rot, scale);
         }
         transformBuffer.SetData(instanceTransforms);
